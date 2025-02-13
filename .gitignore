@@ -1,0 +1,8 @@
+.DS_Store
+.wav
+.mp3
+models/
+.venv
+**.idea/
+.idea/*
+.idea/
