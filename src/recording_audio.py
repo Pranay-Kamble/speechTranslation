@@ -12,7 +12,7 @@ import threading
 # Audio settings
 FORMAT = pyaudio.paInt16
 CHANNELS = 1
-RATE = 44100
+RATE = 16000
 CHUNK = 1024
 DIRECTORY = "data/"
 FILENAME = "raw_audio.wav"
