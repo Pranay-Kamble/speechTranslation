@@ -5,8 +5,8 @@ import json
 import os
 
 # Vosk model path
-MODEL_PATH = "../models/vosk/vosk-model-small-en-us-0.15"
-INPUT_AUDIO = "data/cleaned_audio.wav"  # Replace with the path to your audio file
+MODEL_PATH = "models/vosk/vosk-model-small-en-us-0.15"
+INPUT_AUDIO = "data/harvard.wav"  # Replace with the path to your audio file
 
 
 def check_audio_format(audio_path):
@@ -70,26 +70,3 @@ def process_full_audio(audio_path):
             final_result = json.loads(recognizer.FinalResult())
             return final_result.get("text", "")
 
-
-if __name__ == "__main__":
-    try:
-        # Step 1: Verify and convert audio format if necessary
-        if not check_audio_format(INPUT_AUDIO):
-            print("Audio format is incompatible. Converting...")
-            convert_audio_format(INPUT_AUDIO, "data/converted_audio.wav")
-            audio_path = "data/converted_audio.wav"
-        else:
-            audio_path = INPUT_AUDIO
-
-        # Step 2: Process the full audio file
-        text_output = process_full_audio(audio_path)
-        print("Recognized Text:")
-        print(text_output)
-
-        # Step 3: Save the text output to a file
-        with open("data/recognized_text.txt", "w", encoding="utf-8") as f:
-            f.write(text_output)
-        print("Text saved to recognized_text.txt")
-
-    except Exception as e:
-        print(f"Error: {e}")
