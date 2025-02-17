@@ -2,7 +2,7 @@ import argostranslate.package
 import argostranslate.translate
 import os
 
-def setup_translation_model(from_lang="en", to_lang="hi", model_dir="../models/argos/translate"):
+def setup_translation_model(from_lang="en", to_lang="hi", model_dir="./models/argos/translate"):
     """
     Install the Argos Translate model for the specified language pair.
     """
@@ -39,29 +39,3 @@ def translate_text(input_text, from_lang="en", to_lang="hi"):
 
     # Perform translation
     return translation.translate(input_text)
-
-if __name__ == "__main__":
-    try:
-        # File paths
-        input_text_path = "data/recognized_text.txt"
-        output_text_path = "data/translated_text.txt"
-
-        # Read input text
-        with open(input_text_path, "r", encoding="utf-8") as f:
-            input_text = f.read()
-
-        # Setup translation model
-        setup_translation_model(from_lang="en", to_lang="hi", model_dir="../models/argos/translate")
-
-        # Translate the text
-        translated_text = translate_text(input_text, from_lang="en", to_lang="hi")
-        print("Translated Text:")
-        print(translated_text)
-
-        # Save translated text to a file
-        with open(output_text_path, "w", encoding="utf-8") as f:
-            f.write(translated_text)
-        print(f"Translated text saved to {output_text_path}")
-
-    except Exception as e:
-        print(f"Error: {e}")

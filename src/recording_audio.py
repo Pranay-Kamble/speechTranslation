@@ -68,14 +68,3 @@ def toggle_recording(key):
                 recording = False
     except AttributeError:
         pass  # Handle special keys
-
-# Start the listener
-listener = keyboard.Listener(on_press=toggle_recording)
-listener.start()
-
-print("Press 'r' to start/stop recording and 'q' to quit.")
-while not exit_program:
-    pass  # Keep the program running until 'q' is pressed
-
-listener.stop()
-print("Program exited.")
