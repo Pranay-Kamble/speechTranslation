@@ -5,8 +5,8 @@ import json
 import os
 
 # Vosk model path
-MODEL_PATH = "models/vosk/vosk-model-small-en-us-0.15"
-INPUT_AUDIO = "data/harvard.wav"  # Replace with the path to your audio file
+MODEL_PATH = "models/vosk/vosk-model-small-en-in-0.4"
+INPUT_AUDIO = "data/raw_audio.wav"  # Replace with the path to your audio file
 
 
 def check_audio_format(audio_path):

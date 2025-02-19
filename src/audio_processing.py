@@ -24,6 +24,6 @@ def process_with_noisereduce(input_file, output_file):
     print(f"Processed audio saved to {output_file}")
 
 # Example usage
-input_audio = "./data/raw_audio.wav"  # Replace with your input file path
-output_audio = "./data/cleaned_audio.wav"  # Replace with desired output file path
-process_with_noisereduce(input_audio, output_audio)
+# input_audio = "./data/raw_audio.wav"  # Replace with your input file path
+# output_audio = "./data/cleaned_audio.wav"  # Replace with desired output file path
+# process_with_noisereduce(input_audio, output_audio)

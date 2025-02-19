@@ -19,6 +19,7 @@ FILENAME = "raw_audio.wav"
 
 recording = False
 exit_program = False
+exit_program_event = threading.Event()
 audio_frames = []
 p = pyaudio.PyAudio()
 
@@ -63,8 +64,10 @@ def toggle_recording(key):
                 save_audio()
         elif key.char == 'q':  # Exit the program
             print("Exiting program...")
-            exit_program = True
+            # exit_program = True
+            exit_program_event.set()
             if recording:  # Stop recording if active
                 recording = False
+
     except AttributeError:
         pass  # Handle special keys

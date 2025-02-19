@@ -11,17 +11,18 @@ from src import *
    There is pyttsx3 which uses espeak engine, it is giving very poor output and not suitable for hearing (noisy and robotic voice, almost shit)
 """
 
-MODEL_PATH = "../models/vosk/vosk-model-small-en-us-0.15"
+MODEL_PATH = "../models/vosk/vosk-model-small-en-in-0.4"
 INPUT_AUDIO = "data/raw_audio.wav"  # Replace with the path to your audio file #
-
 
 # Recording the audio
 listener = keyboard.Listener(on_press=toggle_recording)
 listener.start()
 
 print("Press 'r' to start/stop recording and 'q' to quit.")
-while not exit_program:
-    pass  # Keep the program running until 'q' is pressed
+# while not exit_program:
+#     pass
+
+exit_program_event.wait()
 
 listener.stop()
 print("Recording the audio phase has been completed\n\n")
